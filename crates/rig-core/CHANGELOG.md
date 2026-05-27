@@ -6,6 +6,46 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [0.37.1](https://github.com/0xPlaygrounds/rig/compare/rig-core-v0.37.0...rig-core-v0.37.1) - 2026-05-27
+
+### Added
+
+- *(openrouter)* add with_app_identity and with_app_categories builders for app attribution ([#1806](https://github.com/0xPlaygrounds/rig/pull/1806)) (by @jimmiebfulton)
+- *(openrouter)* surface cache token accounting in Usage ([#1808](https://github.com/0xPlaygrounds/rig/pull/1808)) (by @jimmiebfulton)
+- *(gemini)* expose streaming response metadata ([#1790](https://github.com/0xPlaygrounds/rig/pull/1790)) (by @mateobelanger)
+- *(anthropic)* support document citations ([#1778](https://github.com/0xPlaygrounds/rig/pull/1778)) (by @temrjan)
+- *(gemini)* expose finish_reason and model_version on StreamingCompletionResponse ([#1776](https://github.com/0xPlaygrounds/rig/pull/1776)) (by @mateobelanger)
+
+### Fixed
+
+- *(openrouter)* accept Gemini model role responses ([#1800](https://github.com/0xPlaygrounds/rig/pull/1800)) (by @puneetdixit200)
+- *(tools)* safely normalize null tool call arguments ([#1814](https://github.com/0xPlaygrounds/rig/pull/1814)) (by @gold-silver-copper)
+- *(ollama)* buffer NDJSON streaming across HTTP chunk boundaries bytes_stream may split a single NDJSON line across chunks, causing serde_json::from_slice to fail mid-stream with an EOF error on longer assistant messages ([#1759](https://github.com/0xPlaygrounds/rig/pull/1759)) (by @ChadBartley)
+- *(gemini)* record tool use prompt token telemetry ([#1799](https://github.com/0xPlaygrounds/rig/pull/1799)) (by @gold-silver-copper)
+- default OpenAI base64 image detail ([#1781](https://github.com/0xPlaygrounds/rig/pull/1781)) (by @fangkangmi) - #1781
+- stream ToolCallDelta in prompt_request ([#1789](https://github.com/0xPlaygrounds/rig/pull/1789)) (by @notV4l) - #1789
+- fix sqlite threshold and null tool call streaming ([#1786](https://github.com/0xPlaygrounds/rig/pull/1786)) (by @gold-silver-copper) - #1786
+- *(anthropic)* serialize ToolResultContent::Image with source wrapper ([#1772](https://github.com/0xPlaygrounds/rig/pull/1772)) (by @Cyanistic)
+
+### Other
+
+- [codex] Validate model tool calls ([#1823](https://github.com/0xPlaygrounds/rig/pull/1823)) (by @gold-silver-copper) - #1823
+- Cap OpenRouter app categories header ([#1821](https://github.com/0xPlaygrounds/rig/pull/1821)) (by @gold-silver-copper) - #1821
+- [codex] apply Anthropic cache control to tools ([#1815](https://github.com/0xPlaygrounds/rig/pull/1815)) (by @gold-silver-copper) - #1815
+- Expose per-completion-call usage in agent responses ([#1787](https://github.com/0xPlaygrounds/rig/pull/1787)) (by @gold-silver-copper) - #1787
+- Add replayable provider cassette tests ([#1769](https://github.com/0xPlaygrounds/rig/pull/1769)) (by @gold-silver-copper) - #1769
+
+### Contributors
+
+* @gold-silver-copper
+* @jimmiebfulton
+* @puneetdixit200
+* @ChadBartley
+* @mateobelanger
+* @temrjan
+* @fangkangmi
+* @notV4l
+* @Cyanistic
 ## [0.37.0](https://github.com/0xPlaygrounds/rig/compare/rig-core-v0.36.0...rig-core-v0.37.0) - 2026-05-13
 
 ### Added
